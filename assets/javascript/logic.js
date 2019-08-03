@@ -24,6 +24,7 @@ $(document).ready(function () {
     currentTime()
     setInterval(currentTime, 60000)
 
+    // drop down to select time
     $("#traintime").timepicker({
         timeFormat: "h:i a ",
         step: 10,
@@ -35,7 +36,7 @@ $(document).ready(function () {
     });
 
     
-    
+    //test command for form validation - beta version
     $("#test").on("click", function () {
         event.preventDefault()
         alert("test")
@@ -122,10 +123,6 @@ $(document).ready(function () {
         var trainFirstTime = childSnapshot.val().time;
         var trainFrequency = childSnapshot.val().frequency;
 
-        // console.log train Info
-        // console.log(empName);
-        // console.log(empRole);
-        // console.log(empStart);
         console.log(trainFrequency);
 
         // First Time (pushed back 1 year to make sure it comes before current time)
@@ -152,8 +149,6 @@ $(document).ready(function () {
         var nextTrain = moment().add(tMinutesTillTrain, "minutes");
         console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm a"));
 
-
-
         // Create the new row
         var newRow = $("<tr>").addClass("traindata").append(
             $("<td>").html(trainName),
@@ -168,6 +163,7 @@ $(document).ready(function () {
         $("#train-table").append(newRow);
     });
 
+    // update the minutes to arrival every minute
     setInterval(() => {
 
         $(".traindata").empty();
