@@ -74,7 +74,7 @@ $(document).ready(function () {
     })
 
     $("#add-train-btn").on("click", function () {
-        alert("test");
+        
         event.preventDefault();
 
         // Grabs user input and store in database
